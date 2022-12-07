@@ -1,1 +1,21 @@
-<p>data-binding works!</p>
+<!-- ! Property Binding -->
+
+<button class="btn btn-primary" [disabled]="!allowNewServer">Add Server</button>
+
+<!-- ! String Interpolation -->
+
+<h3>{{ "Server" }} With ID {{ serverID }} is {{ getServerStatus() }}</h3>
+
+<!-- ! Event Binding -->
+
+<button class="btn btn-success" (click)="onCreateServer()">Add Server</button>
+
+<p>{{ serverCreationStatus }}</p>
+
+<!-- ! Two Way Binding -->
+
+<input type="text" class="form-control" (input)="onUpdateServerName($event)" />
+
+<input type="text" class="form-control" [(ngModel)]="serverName" />
+
+<p>{{ serverName }}</p>
