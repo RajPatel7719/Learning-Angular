@@ -1,9 +1,12 @@
 <div class="container">
+  <!-- TODO   :   Child to Parent Data Binding -->
+  <app-cockpit
+    (serverCreated)="onServerAdded($event)"
+    (blueprintCreated)="onBlueprintAdded($event)"
+  ></app-cockpit>
+  <hr />
   <div class="row">
     <div class="col-xs-12">
-      <h1 class="text-center">Learning Angular Concepts...!</h1>
-      <hr />
-
       <!--  TODO  :   To use as TAG selector -->
       <!-- <app-server></app-server> -->
 
@@ -17,7 +20,32 @@
       <!-- <app-data-binding></app-data-binding> -->
 
       <!-- TODO   :   Data Binding Topics -->
-      <app-directives></app-directives>
+      <!-- <app-directives></app-directives> -->
+
+      <button class="btn btn-primary" (click)="onChangeFirst()">
+        Change First Element
+      </button>
+      <button class="btn btn-danger" (click)="onDestroyFirst()">
+        Destroy First Element
+      </button>
+
+      <!-- TODO   :   Parent to Child Data Binding -->
+      <app-server-element
+        *ngFor="let serverElement of serverElements"
+        [element]="serverElement"
+        [name]="serverElement.name"
+      >
+        <p>
+          <strong *ngIf="serverElement.type === 'server'" style="color: red">{{
+            serverElement.content
+          }}</strong>
+          <em
+            *ngIf="serverElement.type === 'blueprint'"
+            style="color: deepskyblue"
+            >{{ serverElement.content }}</em
+          >
+        </p>
+      </app-server-element>
     </div>
   </div>
 </div>
