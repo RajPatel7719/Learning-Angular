@@ -1,12 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AccountsService } from './accounts.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   serverElements = [{ type: 'server', name: 'TestServer', content: 'Just Test.!' }];
+  accounts: { name: string, status: string }[] = [];
+
+  constructor(private accountsService: AccountsService) { }
+
+  ngOnInit() {
+    this.accounts = this.accountsService.accounts;
+  }
 
   onServerAdded(serverData: { serverName: string; serverContent: string }) {
     this.serverElements.push({
@@ -24,11 +32,14 @@ export class AppComponent {
     })
   }
 
-  onChangeFirst() {
-    this.serverElements[0].name = 'Changed.!'
-  }
+  // onChangeFirst() {
+  //   this.serverElements[0].name = 'Changed.!'
+  // }
 
-  onDestroyFirst() {
-    this.serverElements.splice(0, 1);
-  }
+  // onDestroyFirst() {
+  //   this.serverElements.splice(0, 1);
+  // }
+
+
+
 }

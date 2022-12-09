@@ -9,6 +9,9 @@ import { FormsModule } from '@angular/forms';
 import { DirectivesComponent } from './directives/directives.component';
 import { CockpitComponent } from './cockpit/cockpit.component';
 import { ServerElementComponent } from './server-element/server-element.component';
+import { CustomDirectiveDirective } from './directives/custom-directive.directive';
+import { AccountComponent } from './account/account.component';
+import { NewAccountComponent } from './new-account/new-account.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { ServerElementComponent } from './server-element/server-element.componen
     DataBindingComponent,
     DirectivesComponent,
     CockpitComponent,
-    ServerElementComponent
+    ServerElementComponent,
+    CustomDirectiveDirective,
+    AccountComponent,
+    NewAccountComponent
   ],
   imports: [
     BrowserModule,
