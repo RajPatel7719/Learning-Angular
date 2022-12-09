@@ -35,10 +35,26 @@
 
 <!-- ! ngFor Directive -->
 
-<p
+<!-- <p
   *ngFor="let server of servers; let i = index; let odd = odd"
   [ngStyle]="{ backgroundColor: getColor() }"
   [ngClass]="{ online: serverStatus === 'online' }"
 >
   {{ i }} {{ server }}
-</p>
+</p> -->
+
+<!-- TODO   :   Implement Custom Directive -->
+
+<!-- <p appCustomDirective>Styling With Custom Directive</p> -->
+
+<!-- TODO   :   ngSwitch Directive -->
+
+<div [ngSwitch]="value">
+  <p *ngSwitchCase="1">value is 1</p>
+  <p *ngSwitchCase="2">value is 2</p>
+  <p *ngSwitchCase="3">value is 3</p>
+  <p *ngSwitchCase="4">value is 4</p>
+  <p *ngSwitchCase="5">value is 5</p>
+  <p *ngSwitchCase="10">value is 10</p>
+  <p *ngSwitchDefault>Default Value</p>
+</div>

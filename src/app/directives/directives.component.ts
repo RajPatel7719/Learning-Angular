@@ -18,6 +18,7 @@ export class DirectivesComponent {
   serverName: string = '';
   serverCreated: boolean = false;
   servers = ['TestServer', 'TestServer 2'];
+  value = 10;
 
   constructor() {
     this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
