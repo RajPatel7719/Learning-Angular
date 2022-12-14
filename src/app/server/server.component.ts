@@ -25,7 +25,7 @@ import { Component } from '@angular/core';
   //  TODO  :   To use INLINE CSS file
   styles: [`
     h1{
-      color: blue;
+      color: dodgerblue;
     }
   `]
 })
