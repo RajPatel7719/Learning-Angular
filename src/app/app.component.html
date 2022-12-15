@@ -56,12 +56,26 @@
         (statusChanged)="onStatusChanged($event)"
       ></app-account> -->
 
-      <ul class="nav nav-tabs">
+      <!-- TODO   :   Routing Concepts -->
+      <!-- <ul class="nav nav-tabs">
         <li role="presentation" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a
             routerLink="/">Home</a></li>
         <li role="presentation"><a routerLink="/servers">Servers</a></li>
         <li role="presentation"><a [routerLink]="['/users']">Users</a></li>
-      </ul>
+      </ul> -->
+
+      <!-- TODO   :   Observables Concepts -->
+      <a routerLink="/">Home</a> |
+      <a [routerLink]="['user', 1]">
+        User 1
+      </a>
+      |
+      <a [routerLink]="['user', 2]">
+        User 2
+      </a>
+      <hr>
+      <p *ngIf="userActivated">Activated!</p>
+      <hr>
     </div>
   </div>
   <div class="row">

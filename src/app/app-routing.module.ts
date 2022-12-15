@@ -1,3 +1,4 @@
+import { User1Component } from './user/user.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -13,6 +14,7 @@ import { ServerResolver } from './servers/server/server-resolver.service';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'user/:id', component: User1Component },
   {
     path: 'users', component: UsersComponent, children: [
       { path: ':id/:name', component: UserComponent },

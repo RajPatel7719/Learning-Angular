@@ -25,6 +25,7 @@ import { AuthGuard } from './auth-guard.service';
 import { CanDeactivateGuard } from './servers/edit-server/can-deactivate-guard.service';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { ServerResolver } from './servers/server/server-resolver.service';
+import { User1Component } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { ServerResolver } from './servers/server/server-resolver.service';
     EditServerComponent,
     Server1Component,
     PageNotFoundComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    User1Component
   ],
   imports: [
     BrowserModule,
