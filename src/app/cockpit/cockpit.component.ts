@@ -2,8 +2,7 @@ import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular
 
 @Component({
   selector: 'app-cockpit',
-  templateUrl: './cockpit.component.html',
-  styleUrls: ['./cockpit.component.css']
+  templateUrl: './cockpit.component.html'
 })
 export class CockpitComponent {
   // TODO   :   To send data from the Child component, we need to include "@output" directives

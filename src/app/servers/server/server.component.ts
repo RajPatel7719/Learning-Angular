@@ -5,8 +5,7 @@ import { ServersService } from '../servers.service';
 
 @Component({
   selector: 'app-server1',
-  templateUrl: './server.component.html',
-  styleUrls: ['./server.component.css']
+  templateUrl: './server.component.html'
 })
 export class Server1Component implements OnInit {
   server: { id: number, name: string, status: string };

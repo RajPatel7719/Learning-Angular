@@ -2,8 +2,7 @@ import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit,
 
 @Component({
   selector: 'app-server-element',
-  templateUrl: './server-element.component.html',
-  styleUrls: ['./server-element.component.css']
+  templateUrl: './server-element.component.html'
 })
 export class ServerElementComponent implements OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
   // TODO   :   To get data from the parent component, we need to include "@input" directives
