@@ -28,6 +28,9 @@ import { ServerResolver } from './servers/server/server-resolver.service';
 import { User1Component } from './user/user.component';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { PipeComponent } from './pipe/pipe.component';
+import { ShortenPipe } from './pipe/shorten.pipe';
+import { FilterPipe } from './pipe/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -50,7 +53,10 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     ErrorPageComponent,
     User1Component,
     TemplateDrivenFormComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    PipeComponent,
+    ShortenPipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
