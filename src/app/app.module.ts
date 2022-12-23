@@ -1,6 +1,8 @@
+import { LoggingInterceptor } from './http/logging.interceptor';
 import { Server1Component } from './servers/server/server.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,6 +33,8 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { PipeComponent } from './pipe/pipe.component';
 import { ShortenPipe } from './pipe/shorten.pipe';
 import { FilterPipe } from './pipe/filter.pipe';
+import { HttpRequestComponent } from './http/http-request/http-request.component';
+import { AuthInterceptor } from './http/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -56,15 +60,25 @@ import { FilterPipe } from './pipe/filter.pipe';
     ReactiveFormComponent,
     PipeComponent,
     ShortenPipe,
-    FilterPipe
+    FilterPipe,
+    HttpRequestComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
-  providers: [ServersService, AuthService, AuthGuard, CanDeactivateGuard, ServerResolver],
-  bootstrap: [AppComponent]
+  providers: [
+    ServersService,
+    AuthService,
+    AuthGuard,
+    CanDeactivateGuard,
+    ServerResolver,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: LoggingInterceptor, multi: true },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
